@@ -6,12 +6,12 @@ android {
         config {
         }
     }
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "org.hackillinois.branding"
         minSdkVersion 19
-        targetSdkVersion 23
+        targetSdkVersion 26
         versionCode 4
         versionName "1.02"
         vectorDrawables.useSupportLibrary = true
@@ -27,16 +27,16 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.github.kenglxn.QRGen:android:2.2.0'
-    compile 'com.android.support:appcompat-v7:23.4.0'
-    compile 'com.android.support:design:23.4.0'
-    compile 'com.google.android.gms:play-services-maps:10.0.1'
-    compile 'com.google.android.gms:play-services-location:10.0.1'
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:design:26.0.0-alpha1'
+    compile 'com.google.android.gms:play-services-maps:11.0.4'
+    compile 'com.google.android.gms:play-services-location:11.0.4'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta5'
     compile 'com.aurelhubert:ahbottomnavigation:2.0.4'
     compile 'com.akexorcist:googledirectionlibrary:1.0.4'
     compile 'com.github.clans:fab:1.6.3'
     compile 'com.android.volley:volley:1.0.0'
-    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.google.code.gson:gson:2.7'
     compile 'com.jakewharton:butterknife:8.1.0'
     apt 'com.jakewharton:butterknife-compiler:8.1.0'
 }
