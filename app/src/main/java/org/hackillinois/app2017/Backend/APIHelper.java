@@ -1,7 +1,7 @@
 package org.hackillinois.app2017.Backend;
 
 public class APIHelper {
-	private static final String SERVER_ADDRESS = "https://api.hackillinois.org";
+	private static final String SERVER_ADDRESS = "http://ec2-107-20-14-41.compute-1.amazonaws.com";
 
 	public static final String AUTH_ENDPOINT = SERVER_ADDRESS + "/v1/auth";
 	public static final String USER_ENDPOINT = SERVER_ADDRESS + "/v1/registration/attendee";

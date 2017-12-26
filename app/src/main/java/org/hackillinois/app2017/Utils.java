@@ -39,7 +39,8 @@ import static org.hackillinois.app2017.Utils.HackIllinoisStatus.DURING;
  */
 
 public class Utils {
-    public static final String API_DATE_FORMAT = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
+    public static final SimpleDateFormat API_DATE_FORMAT = new SimpleDateFormat(Utils.API_DATE_STRING, Locale.ENGLISH);
+    public static final String API_DATE_STRING = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'";
     public static final String HACKILLINOIS_START = "2017-02-24T22:00:00.000Z";
     public static final String HACKILLINOIS_END = "2017-02-26T17:00:00.000Z";
 
@@ -143,7 +144,7 @@ public class Utils {
 
     public static Date getDateFromAPI(String time) {
         try {
-            DateFormat dateFormat = new SimpleDateFormat(API_DATE_FORMAT, Locale.US);
+            DateFormat dateFormat = new SimpleDateFormat(API_DATE_STRING, Locale.US);
                 dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
             return dateFormat.parse(time);
         } catch (ParseException e) {
@@ -153,7 +154,7 @@ public class Utils {
     }
 
     public static String getStringDateAsAPI(Date date) {
-        DateFormat dateFormat = new SimpleDateFormat(API_DATE_FORMAT, Locale.US);
+        DateFormat dateFormat = new SimpleDateFormat(API_DATE_STRING, Locale.US);
         return dateFormat.format(date);
     }
 

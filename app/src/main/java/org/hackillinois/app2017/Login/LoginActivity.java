@@ -51,7 +51,7 @@ public class LoginActivity extends HackillinoisActivity {
         sharedPreferences = this.getSharedPreferences(MainActivity.SHARED_PREFS_NAME, Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-        if (sharedPreferences.getBoolean("hasAuthed", false)) {
+        if (sharedPreferences.getBoolean("hasAuthed", false) || true) {
             //TODO: reauth using api
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -119,13 +119,15 @@ public class LoginActivity extends HackillinoisActivity {
                 },
                 error -> {
                     Toast.makeText(getApplicationContext(), "Sorry, please try again.", Toast.LENGTH_SHORT).show();
-                    loginButton.setClickable(true);
+					loadingView.setVisibility(View.GONE);
+					incorrectText.setVisibility(View.VISIBLE);
+					loginButton.setClickable(true);
                 }
         ) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
-                headers.put("Authorization", sharedPreferences.getString("auth", ""));
+                headers.put("Authorization", "Basic " + sharedPreferences.getString("auth", ""));
                 return headers;
             }
         };

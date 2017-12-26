@@ -62,7 +62,7 @@ public class EventManager {
 				response -> {
 					Type listType = new TypeToken<ArrayList<Event>>() {}.getType();
 					GsonBuilder gsonBuilder = new GsonBuilder();
-					gsonBuilder.setDateFormat(Utils.API_DATE_FORMAT);
+					gsonBuilder.setDateFormat(Utils.API_DATE_STRING);
 					Gson gson = gsonBuilder.create();
 
 					JsonParser jsonParser = new JsonParser();

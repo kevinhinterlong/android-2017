@@ -31,7 +31,7 @@ public class HomeEventList extends ArrayList<Object> {
 				.forEach(this::add);
 	}
 
-	private static boolean shouldDisplayEvent(Date date, Event event) {
+	protected static boolean shouldDisplayEvent(Date date, Event event) {
 		Date start = event.getStartTime();
 		Date end = event.getEndTime();
 		if (date.before(start) || date.after(end)) { // if it hasn't started or already ended

@@ -34,8 +34,7 @@ public class EventListFragment extends Fragment {
     private static final Predicate<Event> IS_SATURDAY = event -> event.getStartDay() == 6;
     private static final Predicate<Event> IS_SUNDAY = event -> event.getStartDay() == 0;
 
-    @BindView(R.id.my_recycler_view)
-    RecyclerView mRecyclerView;
+    @BindView(R.id.my_recycler_view) RecyclerView mRecyclerView;
     private Unbinder unbinder;
 
     @Override
@@ -69,7 +68,7 @@ public class EventListFragment extends Fragment {
         return view;
     }
 
-    private Predicate<Event> getFilterFromArguments(Bundle extras) {
+    protected static Predicate<Event> getFilterFromArguments(Bundle extras) {
         int whichDay = extras.getInt("day");
         Log.i("Which Day", whichDay + "");
         switch (whichDay) {
